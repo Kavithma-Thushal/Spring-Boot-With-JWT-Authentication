@@ -1,11 +1,8 @@
 package lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service.impl;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.dto.CustomerDTO;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.dto.UserDTO;
-import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.repository.CustomerRepo;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.repository.UserRepo;
-import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service.CustomerService;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

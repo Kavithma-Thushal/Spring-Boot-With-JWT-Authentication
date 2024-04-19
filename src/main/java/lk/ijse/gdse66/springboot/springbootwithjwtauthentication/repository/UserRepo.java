@@ -1,6 +1,5 @@
 package lk.ijse.gdse66.springboot.springbootwithjwtauthentication.repository;
 
-import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.entity.CustomerEntity;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
