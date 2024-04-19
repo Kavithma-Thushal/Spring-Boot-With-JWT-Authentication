@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.springboot.springbootwithjwtauthentication;
 
+import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.config.JwtConfigurationFilter;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

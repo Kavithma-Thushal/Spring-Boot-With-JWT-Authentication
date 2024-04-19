@@ -1,10 +1,13 @@
 package lk.ijse.gdse66.springboot.springbootwithjwtauthentication.controller;
 
+import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.auth.request.SignInRequest;
+import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.auth.request.SignUpRequest;
+import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.auth.response.JwtAuthResponse;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.dto.UserDTO;
+import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service.AuthenticationService;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,18 +17,30 @@ import java.util.List;
  * @since : 7:15 PM - 4/19/2024
  **/
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/user")
 public class UserController {
 
     private final UserService userService;
+    private final AuthenticationService authenticationService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, AuthenticationService authenticationService) {
         this.userService = userService;
+        this.authenticationService = authenticationService;
     }
 
     @GetMapping
     public List<UserDTO> getAllUsers() {
         System.out.println("User Request Received...!");
         return userService.geAllUsers();
+    }
+
+    @PostMapping("/signin")
+    public ResponseEntity<JwtAuthResponse> signIn(@RequestBody SignInRequest signInRequest){
+        return ResponseEntity.ok(authenticationService.signIn(signInRequest));
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<JwtAuthResponse> signUp(@RequestBody SignUpRequest signUpRequest){
+        return ResponseEntity.ok(authenticationService.signUp(signUpRequest));
     }
 }

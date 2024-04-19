@@ -1,6 +1,8 @@
 package lk.ijse.gdse66.springboot.springbootwithjwtauthentication.dto;
 
+import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.util.Role;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,8 +14,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 public class UserDTO {
     private String id;
-    private String name;
-    private String address;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private Role role;
 }

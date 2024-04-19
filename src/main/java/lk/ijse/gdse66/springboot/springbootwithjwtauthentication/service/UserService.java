@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service;
 
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.dto.UserDTO;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ import java.util.List;
  **/
 public interface UserService {
     List<UserDTO> geAllUsers();
+    UserDetailsService userDetailsService();
 }

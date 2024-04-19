@@ -5,6 +5,8 @@ import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.dto.UserDTO;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.repository.UserRepo;
 import lk.ijse.gdse66.springboot.springbootwithjwtauthentication.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,5 +31,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDTO> geAllUsers() {
         return userRepo.findAll().stream().map(user -> modelMapper.map(user, UserDTO.class)).toList();
+    }
+
+    @Override
+    public UserDetailsService userDetailsService() {
+        return username -> userRepo.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("user not found"));
     }
 }
