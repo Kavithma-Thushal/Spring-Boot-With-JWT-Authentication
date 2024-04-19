@@ -25,7 +25,7 @@ public class CustomerController {
 
     @GetMapping
     public List<CustomerDTO> getAllCustomers() {
-        System.out.println("Request Received...!");
+        System.out.println("Customer Request Received...!");
         return customerService.geAllCustomers();
     }
 }
