@@ -21,7 +21,7 @@ authentication, allowing for scalability and security in distributed systems.
 
 ## Usage
 
-1. Clone the repository `git clone https://github.com/your-username/Spring-Boot-With-JWT-Authentication.git`
+1. Clone the repository `git clone https://github.com/Kavithma-Thushal/Spring-Boot-With-JWT-Authentication.git`
 2. Navigate to the project directory `cd Spring-Boot-With-JWT-Authentication`
 3. Run the application `./mvnw spring-boot:run`
 4. Access the application `http://localhost:8080`
